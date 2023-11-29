@@ -19,7 +19,9 @@ environment {
         }
             steps{
                 withSonarQubeEnv('valaxy-sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
-                    sh "${SCANNER_HOME**}**}/bin/sonar-scanner"
+                    sh "${SCANNER_HOME**}**}/bin/sonar-scanner \
+                    -Dsonar.projectKey=valaxy-key0_twittertrend \
+                    -Dsonar.sources=. "
                 }
             }
         }
