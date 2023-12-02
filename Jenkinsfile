@@ -15,11 +15,11 @@ environment {
         }
         stage ("Sonar Analysis") {
             environment {
-               scannerHome = tool 'valaxy-sonarscanner'
+               scannerHome = tool 'sonar-scanner'
             }
             steps {
                 echo '<--------------- Sonar Analysis started  --------------->'
-                withSonarQubeEnv('valaxy-sonarqube-server') {    
+                withSonarQubeEnv('sonarqube-server') {    
                     sh "${scannerHome}/bin/sonar-scanner"
                 echo '<--------------- Sonar Analysis stopped  --------------->'
                 }
