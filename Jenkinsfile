@@ -14,15 +14,15 @@ environment {
             }
         }
 
-        stage('SonarQube analysis') {
-        environment {
-            SCANNER_HOME = tool 'valaxy-sonar-scanner'
-        }
-            steps{
-                withSonarQubeEnv('valaxy-sonarqube-server') {
-                    sh "${SCANNER_HOME}}/bin/sonar-scanner"
-                   }
-            }
-        }
+        // stage('SonarQube analysis') {
+        // environment {
+        //     SCANNER_HOME = tool 'valaxy-sonar-scanner'
+        // }
+        //     steps{
+        //         withSonarQubeEnv('valaxy-sonarqube-server') {
+        //             sh "${SCANNER_HOME}}/bin/sonar-scanner"
+        //            }
+        //     }
+        // }
     }
 }
