@@ -13,6 +13,11 @@ environment {
                 sh 'mvn clean deploy'
             }
         }
+        stage("test") {
+            steps {
+                sh 'mvn surefire-report:report'
+            }
+        }
         stage ("Sonar Analysis") {
             environment {
                scannerHome = tool 'valaxy-sonar-scanner'
