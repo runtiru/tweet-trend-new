@@ -18,7 +18,7 @@ environment {
                scannerHome = tool 'valaxy-sonar-scanner'
             }
             steps {
-                echo '<--------------- Sonar Analysis started  --------------->'
+                echo 'Sonar Analysis started'
                 withSonarQubeEnv('valaxy-sonarqube-server') {    
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
